@@ -1,0 +1,42 @@
+let inp = document.querySelector('input');
+let btn = document.querySelector('button');
+let ul = document.querySelector('ul');
+
+btn.addEventListener("click",function(){
+   
+    let item = document.createElement('li');
+    item.innerText = inp.value;
+    
+    let btn = document.createElement("button");
+    btn.innerText = "delete";
+    btn.classList.add('delete');
+
+    item.appendChild(btn);
+    ul.appendChild(item);
+    inp.value ="";
+
+});
+
+let new_ul = document.querySelector('ul');
+new_ul.addEventListener("click",function(event){
+    console.log(event.target);
+    let target = event.target.parentElement;
+    let flag =confirm("!SURE do you want to remove your task");
+    if(flag ==1 )
+        {
+            target.remove();
+        }
+    
+    
+});
+
+
+// let delbtn = document.querySelectorAll('.delete');
+// for(btn of delbtn)
+// {
+//     btn.addEventListener("click",function(){
+//         let parentobj = this.parentElement;
+//         console.log(parentobj);
+//         parentobj.remove(); 
+//     });
+// }
